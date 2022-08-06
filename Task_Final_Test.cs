@@ -14,16 +14,16 @@ if (count <= 0)
     WriteLine("Ошибка. Число слов не может быть <= 0");
     return;
 }
-WriteLine("Введите содержание массива (слова): ");
+WriteLine("Введите содержание массива: ");
 string arrayStr = "";
 string[] mainArray = GetArrayString(arrayStr, count);
-string[] selectedElements = SelectShortStrings(mainArray);
+string[] selectedElements = SelectShortElements(mainArray);
 Write($"[\"{String.Join("\", \"", mainArray)}\"] -> [\"{String.Join("\", \"", selectedElements)}\"]");
 
 
-string[] GetArrayString(string ArrStr, int NumberOfWords)
+string[] GetArrayString(string arrStr, int numberOfWords)
 {
-    string[] result = new string[NumberOfWords];
+    string[] result = new string[numberOfWords];
     for (int i = 0; i < result.Length; i++)
     {
         result[i] = ReadLine();
@@ -31,12 +31,12 @@ string[] GetArrayString(string ArrStr, int NumberOfWords)
     return result;
 }
 
-int CountNumber(string[] ArrStr)
+int CountNumberOfShortElem(string[] arrStr)
 {
     int count = 0;
-    for (int i = 0; i < ArrStr.Length; i++)
+    for (int i = 0; i < arrStr.Length; i++)
     {
-        if (ArrStr[i].Length < 4)
+        if (arrStr[i].Length < 4)
         {
             count += 1;
         }
@@ -44,15 +44,15 @@ int CountNumber(string[] ArrStr)
     return count;
 }
 
-string[] SelectShortStrings(string[] ArrStr)
+string[] SelectShortElements(string[] arrStr)
 {
     int j = 0;
-    string[] result = new string[CountNumber(ArrStr)];
-    for (int i = 0; i < ArrStr.Length; i++)
+    string[] result = new string[CountNumberOfShortElem(arrStr)];
+    for (int i = 0; i < arrStr.Length; i++)
     {
-        if (ArrStr[i].Length < 4)
+        if (arrStr[i].Length < 4)
         {
-            result[j] = ArrStr[i];
+            result[j] = arrStr[i];
             j++;
         }
     }

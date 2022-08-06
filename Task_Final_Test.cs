@@ -11,15 +11,14 @@ WriteLine("Введите количество слов в массиве: ");
 int count = int.Parse(ReadLine());
 if (count <= 0)
 {
-    WriteLine("Error. The value of count is incorrect.");
+    WriteLine("Ошибка. Число слов не может быть <= 0");
     return;
 }
 WriteLine("Введите содержание массива (слова): ");
 string arrayStr = "";
 string[] mainArray = GetArrayString(arrayStr, count);
-Write($"[\"{String.Join("\", \"", mainArray)}\"] -> ");
 string[] selectedElements = SelectShortStrings(mainArray);
-Write($"[\"{String.Join("\", \"", selectedElements)}\"]");
+Write($"[\"{String.Join("\", \"", mainArray)}\"] -> [\"{String.Join("\", \"", selectedElements)}\"]");
 
 
 string[] GetArrayString(string ArrStr, int NumberOfWords)

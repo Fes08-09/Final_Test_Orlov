@@ -8,15 +8,15 @@ using static System.Console;
 Clear();
 
 WriteLine("Введите количество слов в массиве: ");
-int count = int.Parse(ReadLine());
-if (count <= 0)
+int size = int.Parse(ReadLine());
+if (size <= 0)
 {
     WriteLine("Ошибка. Число слов не может быть <= 0");
     return;
 }
 WriteLine("Введите содержание массива: ");
 string arrayStr = "";
-string[] mainArray = GetArrayString(arrayStr, count);
+string[] mainArray = GetArrayString(arrayStr, size);
 string[] selectedElements = SelectShortElements(mainArray);
 Write($"[\"{String.Join("\", \"", mainArray)}\"] -> [\"{String.Join("\", \"", selectedElements)}\"]");
 
